@@ -1,0 +1,14 @@
+<?php
+
+$data = $_POST;
+$log_file = __DIR__ . '/' . time() . '.html';
+
+$json = $data['payload'];
+
+$info = json_decode($json);
+
+echo '<pre>';
+file_put_contents($log_file,'<pre>'.var_export($info,true));
+
+echo 'ok';
+
